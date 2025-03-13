@@ -55,7 +55,6 @@ class PieceContainer:
     def capturePiece(self, coordinate):
         capturedPiece = self.getPiece(coordinate)
         if not capturedPiece is None:
-            random.seed()
             if random.random() < capturedPiece.coordinates[coordinate]:
                 capturedPiece.die()
             else:
