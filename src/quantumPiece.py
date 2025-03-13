@@ -1,11 +1,10 @@
-from abc import ABC
+class QuantumPiece():
 
-
-class QuantumPiece(ABC):
-
-    def __init__(self, color):
+    def __init__(self, color, pieceType):
         self.color = color
         self.coordinates = dict()
+        self.hasMoved = False
+        self.type = pieceType
 
     def adjustProbabilities(self):
         valuesTotal = 0
@@ -13,3 +12,6 @@ class QuantumPiece(ABC):
             valuesTotal += value
         for key in self.coordinates.keys():
             self.coordinates[key] = self.coordinates[key] * (1 / valuesTotal)
+
+    def die(self):
+        self.coordinates = None
