@@ -27,3 +27,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+__pycache__/
+*.aseprite
+.idea/
+venv/
+.gitignore

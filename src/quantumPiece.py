@@ -1,8 +1,10 @@
-class QuantumPiece():
+class QuantumPiece:
 
-    def __init__(self, color, pieceType):
+    def __init__(self, color, pieceType, coordinate, pieceId):
+        self.pieceId = pieceId
         self.color = color
         self.coordinates = dict()
+        self.coordinates[coordinate] = 1
         self.hasMoved = False
         self.type = pieceType
 
@@ -14,4 +16,4 @@ class QuantumPiece():
             self.coordinates[key] = self.coordinates[key] * (1 / valuesTotal)
 
     def die(self):
-        self.coordinates = None
+        self.coordinates = dict()
