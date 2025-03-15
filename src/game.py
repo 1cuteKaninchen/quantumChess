@@ -25,6 +25,10 @@ class Game:
         if tile not in self.getMoves(self.selectedTileFrom):
             return
 
+        if tile == self.selectedTileTo:
+            self.selectedTileTo = None
+            return
+
         # now we know that we clicked on a tile we can move to
         if self.selectedTileTo is None:
             possibleMoves = 0

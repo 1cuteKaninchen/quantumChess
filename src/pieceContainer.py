@@ -148,9 +148,10 @@ class PieceContainer:
                     if not self.getPiece((0, coordinate[1])).hasMoved and self.getPiece((1, coordinate[1])) is None:
                         if self.getPiece((2, coordinate[1])) is None and self.getPiece((3, coordinate[1])) is None:
                             coordinates.append((2, coordinate[1]))
-                    if not self.getPiece((7, coordinate[1])).hasMoved and self.getPiece((5, coordinate[1])) is None:
-                        if self.getPiece((6, coordinate[1])) is None:
-                            coordinates.append((6, coordinate[1]))
+                    if self.getPiece((7, coordinate[1])) is not None:
+                        if not self.getPiece((7, coordinate[1])).hasMoved and self.getPiece((5, coordinate[1])) is None:
+                            if self.getPiece((6, coordinate[1])) is None:
+                                coordinates.append((6, coordinate[1]))
 
             case "queen":
                 for xDirection in (-1, 0, 1):

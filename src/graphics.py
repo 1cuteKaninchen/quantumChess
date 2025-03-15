@@ -85,7 +85,7 @@ class UI:
         pygame.display.set_caption("Menu")
         customTheme = pygame_menu.themes.THEME_DARK
         customTheme.background_color = pygame_menu.baseimage.BaseImage("images/menu/borgar.png")
-        customTheme.title_background_color = (0, 0, 0)
+        customTheme.title_background_color = (0, 0, 0, 0)
         customTheme.widget_background_color = (238, 174, 238)
         customTheme.widget_font_color = (50, 50, 50)
 
