@@ -59,6 +59,8 @@ class PieceContainer:
         # handles enPassant
         if piece.type == "pawn":
             self.handleEnPassant(coordinateFrom, coordinateTo)
+        else:
+            self.enPassant = None
 
         piece.coordinates[coordinateTo] = probability
 
@@ -74,6 +76,8 @@ class PieceContainer:
         if piece.type == "pawn":
             for partMove in (coordinateTo1, coordinateTo2):
                 self.handleEnPassant(coordinateFrom, partMove)
+        else:
+            self.enPassant = None
 
         piece.coordinates[coordinateTo1] = probability / 2
         piece.coordinates[coordinateTo2] = probability / 2
@@ -106,6 +110,8 @@ class PieceContainer:
                 self.capturePiece((move[0], move[1] - 1))
         if abs(move[1] - coordinateFrom[1]) == 2:
             self.enPassant = (coordinateFrom[0], (coordinateFrom[1] + move[1]) / 2)
+        else:
+            self.enPassant = None
 
     def capturePiece(self, coordinate):
         capturedPiece = self.getPiece(coordinate)
